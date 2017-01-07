@@ -2,24 +2,24 @@
 include 'cabecalho.php';
 include 'logica-usuario.php';
 
-if (isset($_GET['falhaDeSeguranca']) && $_GET['falhaDeSeguranca']==1) {
-	echo "<p class='alert-danger'>Usuário ou senha, incorretos!</p>";
+
+if (isset($_SESSION['danger'])) {
+	echo "<p class='alert-danger'>".$_SESSION['danger']."</p>";
 }
 
-if (isset($_GET['falhaDeSeguranca']) && $_GET['falhaDeSeguranca']==0) {
-	echo "<p class='alert-success'>Usuário Logado com sucesso!</p>";
+if (isset($_SESSION['success'])) {
+	echo "<p class='alert-success'>".$_SESSION['success']."</p>";
 }
 
-if (isset($_GET['falhaDeAcesso']) && $_GET['falhaDeAcesso']==1) {
-	echo "<p class='alert-danger'>Usuário, é nescessário logar para ter acesso a essa funcionalidade!</p>";
-}
+unset($_SESSION['danger']);
+unset($_SESSION['success']);
 
 
 ?>
 
 <?php if (usuarioEstaLogado()){
 echo "<h1>Bem-vindo!</h1>";
-echo "<p class='alert-success'>Usuário logado como: ".usuarioLogado()."</p>";
+echo "<p class='alert-success'>Usuário logado como: ".usuarioLogado()." - <a href='logout.php'>Deslogar</a></p>";
 }else{
 ?>
 

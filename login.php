@@ -10,8 +10,10 @@ $senha = $_POST['senha'];
 $usuario = logandoUsuario($conexao, $email, $senha);
 
 if(!$usuario){
-	header("Location:index.php?falhaDeSeguranca=1");
+	$_SESSION['danger'] = "Usuário ou senha, incorretos!";
+	header("Location:index.php");
 }else{
 	logaUsuario($usuario['email']);
-	header("Location:index.php?falhaDeSeguranca=0");
+	$_SESSION['success'] = "Usuário Logado com sucesso!";
+	header("Location:index.php");
 }
