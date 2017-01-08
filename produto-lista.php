@@ -3,10 +3,13 @@
 include 'cabecalho.php';
 include 'banco-produto.php';
 include 'conecta.php';
+include 'logica-usuario.php';
 
-if(isset($_GET['removido'])){
-	echo "<p class='alert-success'>Produto removido com sucesso!</p>";
+if (isset($_SESSION['success'])) {
+	echo "<p class='alert-success'>".$_SESSION['success']."</p>";
 }
+
+unset($_SESSION['success']);
 
 $produtos = listaProduto($conexao);
 ?>
