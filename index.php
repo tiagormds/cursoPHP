@@ -1,18 +1,10 @@
 <?php
 include 'cabecalho.php';
 include 'logica-usuario.php';
+include 'mostra-alerta.php';
 
-
-if (isset($_SESSION['danger'])) {
-	echo "<p class='alert-danger'>".$_SESSION['danger']."</p>";
-}
-
-if (isset($_SESSION['success'])) {
-	echo "<p class='alert-success'>".$_SESSION['success']."</p>";
-}
-
-unset($_SESSION['danger']);
-unset($_SESSION['success']);
+mostraAlerta("success");
+mostraAlerta("danger");
 
 
 ?>
