@@ -1,8 +1,7 @@
 <?php
 
-include 'banco-produto.php';
-include 'conecta.php';
-include 'logica-usuario.php';
+require_once 'banco-produto.php';
+require_once 'logica-usuario.php';
 
 $id = $_POST['id'];
 

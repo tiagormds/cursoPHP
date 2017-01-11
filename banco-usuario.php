@@ -1,4 +1,5 @@
 <?php
+require_once 'conecta.php';
 
 function logandoUsuario($conexao, $email, $senha){
 	$senhaMD5 = md5($senha);

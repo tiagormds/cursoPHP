@@ -1,9 +1,8 @@
 <?php
 
-include 'cabecalho.php';
-include 'banco-produto.php';
-include 'conecta.php';
-include 'logica-usuario.php';
+require_once 'cabecalho.php';
+require_once 'banco-produto.php';
+require_once 'logica-usuario.php';
 
 if (isset($_SESSION['success'])) {
 	echo "<p class='alert-success'>".$_SESSION['success']."</p>";

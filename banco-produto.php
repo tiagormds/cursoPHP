@@ -1,5 +1,7 @@
 <?php
 
+require_once 'conecta.php';
+
 function listaProduto($conexao){
 	$produtos = [];
 	$query = "SELECT produtos.*, categorias.nome as categoria_nome FROM produtos JOIN categorias ON produtos.categoria_id = categorias.id";

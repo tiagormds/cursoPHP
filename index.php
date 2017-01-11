@@ -1,7 +1,7 @@
 <?php
-include 'cabecalho.php';
-include 'logica-usuario.php';
-include 'mostra-alerta.php';
+require_once 'cabecalho.php';
+require_once 'logica-usuario.php';
+require_once 'mostra-alerta.php';
 
 mostraAlerta("success");
 mostraAlerta("danger");
